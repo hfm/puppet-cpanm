@@ -12,4 +12,8 @@ Puppet::Type.type(:package).provide(:cpanm, :parent => Puppet::Provider::Package
     output = execute(command)
     self.fail "Could not install: #{output.chomp}" if output.include?("failed")
   end
+
+  def uninstall
+    cpanm '--uninstall', resource[:name]
+  end
 end

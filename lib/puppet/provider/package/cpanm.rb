@@ -3,7 +3,7 @@ require 'puppet/provider/package'
 Puppet::Type.type(:package).provide(:cpanm, :parent => Puppet::Provider::Package) do
   desc "Package provider for cpanminus"
 
-  commands :cpanm => '/usr/bin/cpanm'
+  commands :cpanm => '/usr/local/bin/cpanm'
 
   def install(useversion = true)
     command = [command(:cpanm)]

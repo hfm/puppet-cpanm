@@ -35,7 +35,12 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class cpanm {
+class cpanm (
+  $ensure = present,
+  $user   = 'root',
+  $target = undef,
+) {
 
+  contain cpanm::package
 
 }
